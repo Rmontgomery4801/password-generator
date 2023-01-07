@@ -3,8 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 var passwordText = document.querySelector("#password");
 
-// possible outputs that can be generated
-
+// possible characters
 function getPassword() {
     var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
     var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -28,7 +27,7 @@ function getPassword() {
         var upperLettersValue = confirm("Click OK to include uppercase characters.")
     }
 
-    //conditionals: if confirmed, add value to conditions
+    //conditionals
     if (symbolsValue) { passwordConditions += symbols }
     if (numbersValue) { passwordConditions += numbers }
     if (lowerLettersValue) { passwordConditions += lowerLetters }
@@ -43,7 +42,7 @@ function getPassword() {
 
 
 
-//writing the password
+//write password
 function writePassword(password) {
     if (password.length === 0) {
         return
