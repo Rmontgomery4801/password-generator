@@ -1,19 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var passwordText = document.querySelector("#password");
-
-// possible characters
+// character criteria options
 function getPassword() {
-    var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
     var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+
     var symbols = "!@#$%^&*()_+{}|[];:',./<>?";
     var numbers = "1234567890";
     var passwordConditions = "";
     var password = "";
 
     var passwordLength = prompt(
-        "How many characters would you like your password to contain? Please enter a value between 8 to 128.");
+        "How many characters would you like the password to contain? Enter a value between 8 to 128 characters.");
 
     if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
         alert("Please enter a valid length. The value has to be between 8 to 128.");
@@ -21,17 +20,17 @@ function getPassword() {
     }
 
     else {
-        var symbolsValue = confirm("Click OK to include special characters")
-        var numbersValue = confirm("Click OK to include numeric characters.")
-        var lowerLettersValue = confirm("Click OK to include lowercase characters.")
         var upperLettersValue = confirm("Click OK to include uppercase characters.")
+        var lowerLettersValue = confirm("Click OK to include lowercase characters.")
+        var numbersValue = confirm("Click OK to include numeric characters.")
+        var symbolsValue = confirm("Click OK to include special characters")
     }
 
     //conditionals
-    if (symbolsValue) { passwordConditions += symbols }
-    if (numbersValue) { passwordConditions += numbers }
-    if (lowerLettersValue) { passwordConditions += lowerLetters }
     if (upperLettersValue) { passwordConditions += upperLetters }
+    if (lowerLettersValue) { passwordConditions += lowerLetters }
+    if (numbersValue) { passwordConditions += numbers }
+    if (symbolsValue) { passwordConditions += symbols }
 
 
     for (i = 0; i < passwordLength; i++) {
@@ -44,6 +43,7 @@ function getPassword() {
 
 //write password
 function writePassword(password) {
+    var passwordText = document.querySelector("#password");
     if (password.length === 0) {
         return
     }
