@@ -1,6 +1,6 @@
 # **Password Generator**
 
-For this challange the started code was modified to the application so it will now generate passwords.
+For this challange the starter code was modified to the application so it will now generate passwords.
 
 **Instructions**
 1. Click Red generate password button.
